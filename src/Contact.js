@@ -18,6 +18,8 @@ export function Contact() {
       <p>LinkedIn</p>
       <p>GitHub</p>
       <p>Email</p>
+      <p>Icons</p>
+
     </div>
   );
 }
