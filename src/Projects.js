@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 
 const projects = css`
   background-color: #ffbfb7;
+  padding: 30px 100px;
 
   > h1 {
     margin: 0;
@@ -25,6 +26,12 @@ export function Projects() {
         Technologies: Next.js, React, TypeScript, PostgreSQL, Cookies, REST API,
         Cloudinary, MaterialUI, DrawSQL, Figma
       </p>
+      <img
+        src="/feastful.png"
+        alt="landing page of feastful"
+        width="300px"
+        height="auto"
+      />
       <h2>planteria</h2>
       <p>
         planteria is a full stack shop for exotic plants. The project has a
@@ -36,6 +43,13 @@ export function Projects() {
         Technologies: Next.js, React, TypeScript, PostgreSQL, Cookies, Emotion,
         Jest, Playwright
       </p>
+      <img
+        src="/planteria.png"
+        alt="landing page of planteria"
+        width="300px"
+        height="auto"
+      />
+
       <h2>Meme Generator</h2>
       <p>
         The Meme Generator fedges and lists various images from an external API
@@ -43,6 +57,12 @@ export function Projects() {
         the images, generate and download the final image.
       </p>
       <p>Technologies: React, CSS, External API</p>
+      <img
+        src="/memeGenerator.png"
+        alt="landing page of the meme generator"
+        width="300px"
+        height="auto"
+      />
     </div>
   );
 }

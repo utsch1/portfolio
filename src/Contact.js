@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 const contact = css`
   background-color: #700353;
   color: #fff;
+  padding: 30px 100px;
 
   > h1 {
     margin: 0;
@@ -19,7 +20,6 @@ export function Contact() {
       <p>GitHub</p>
       <p>Email</p>
       <p>Icons</p>
-
     </div>
   );
 }
