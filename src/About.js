@@ -96,6 +96,8 @@ const passions = css`
   justify-content: space-between;
 
   div > div {
+    background-color: #fff;
+
     width: 150px;
     height: 150px;
     display: inline-block;
@@ -104,12 +106,27 @@ const passions = css`
     overflow: hidden;
   }
 
-  div > div > img {
+  div > div > img:first-child {
+    position: absolute;
+    padding-left: 27px;
+    padding-top: 24px;
+    width: 100px;
+    height: auto;
+  }
+
+  div > div > img:last-child {
+    position: relative;
     justify-self: center;
     align-self: center;
     flex-shrink: 0;
     width: 150px;
     height: auto;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+  div > div > img:last-child:hover {
+    opacity: 1;
+    transition: opacity 1s;
   }
 `;
 
@@ -370,12 +387,22 @@ export function About() {
         <div>
           <h3>Sports</h3>
           <div>
+            <img
+              src="sportIcon.png"
+              alt="Sport Icon showing a bar with gymnastic rings"
+            />
+
             <img src="sport.jpg" alt="Ute doing Aerial Silk" />
           </div>
         </div>
         <div>
           <h3>Traveling</h3>
           <div>
+            <img
+              src="travelingIcon.png"
+              alt="Traveling Icon showing the World with a plane"
+            />
+
             <img
               src="traveling.jpg"
               alt="Ute in front of the palace in Taipei, Taiwan"
@@ -385,6 +412,8 @@ export function About() {
         <div>
           <h3>Cooking & Baking</h3>
           <div>
+            <img src="cookingIcon.png" alt="Cooking Icon with a chef's hat" />
+
             <img
               src="food.jpeg"
               alt="dish with fish on spinach and crispy potatoes"
@@ -394,12 +423,18 @@ export function About() {
         <div>
           <h3>Plants</h3>
           <div>
+            <img src="plantIcon.png" alt="Plant Icon" />
+
             <img src="plants.jpeg" alt="an urban jungle" />
           </div>
         </div>
         <div>
           <h3>Interior Design</h3>
           <div>
+            <img
+              src="interiorDesignIcon.png"
+              alt="Interior Design Icon showing a staircase with plants"
+            />
             <img
               src="interior.jpg"
               alt="an apartment entrance with a black wall and vintage furniture"
