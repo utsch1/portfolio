@@ -119,6 +119,16 @@ export function Icons() {
       <a target="_blank" href="https://icons8.com">
         Icons8
       </a>
+      <a
+        target="_blank"
+        href="https://icons8.com/icon/gFw7X5Tbl3ss/material-ui"
+      >
+        Material Ui
+      </a>{' '}
+      icon by{' '}
+      <a target="_blank" href="https://icons8.com">
+        Icons8
+      </a>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import cloudinary from './Logos/cloudinary.png';
 import css3 from './Logos/css3.png';
 import migrations from './Logos/datamigrations.png';
 import drawsql from './Logos/drawsql.png';
+import emotion from './Logos/emotion.png';
 import figma from './Logos/figma.png';
 import flyio from './Logos/flyio.svg';
 import git from './Logos/git.png';
@@ -14,6 +15,7 @@ import illustrator from './Logos/illustrator.png';
 import indesign from './Logos/indesign.png';
 import javascript from './Logos/javascript.png';
 import jest from './Logos/jest.png';
+import materialui from './Logos/materialui.png';
 import netlify from './Logos/netlify.png';
 import nextjs from './Logos/nextjs.png';
 import nodejs from './Logos/nodejs.png';
@@ -255,6 +257,22 @@ export function About() {
         </div>
         <div
           css={{
+            backgroundColor: '#292929',
+          }}
+        >
+          <img src={emotion} alt="Emotion Logo" />
+          EMOTION
+        </div>
+        <div
+          css={{
+            backgroundColor: '#048cd4',
+          }}
+        >
+          <img src={materialui} alt="Material UI Logo" />
+          MATERIAL UI{' '}
+        </div>
+        <div
+          css={{
             backgroundColor: '#3448c5',
           }}
         >
@@ -355,7 +373,7 @@ export function About() {
           }}
         >
           <img src={photoshop} alt="Adobe Photoshop Logo" />
-          ADOBE PHOTOSHOP
+          PHOTOSHOP
         </div>
         <div
           css={{
@@ -363,7 +381,7 @@ export function About() {
           }}
         >
           <img src={indesign} alt="Adobe Indesign Logo" />
-          ADOBE INDESIGN
+          INDESIGN
         </div>
         <div
           css={{
@@ -371,7 +389,7 @@ export function About() {
           }}
         >
           <img src={illustrator} alt="Adobe Illustrator Logo" />
-          ADOBE ILLUSTRATOR
+          ILLUSTRATOR
         </div>
         <div
           css={{
@@ -379,7 +397,7 @@ export function About() {
           }}
         >
           <img src={afterEffects} alt="Adobe AfterEffects Logo" />
-          ADOBE AFTER EFFECTS
+          AFTER EFFECTS
         </div>
       </div>
       <h2>My Passions</h2>
