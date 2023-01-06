@@ -17,6 +17,7 @@ import jest from './Logos/jest.png';
 import netlify from './Logos/netlify.png';
 import nextjs from './Logos/nextjs.png';
 import nodejs from './Logos/nodejs.png';
+import npm from './Logos/npm.png';
 import photoshop from './Logos/photoshop.png';
 import playwright from './Logos/playwright.png';
 import postgresql from './Logos/postgre.png';
@@ -36,7 +37,14 @@ const about = css`
   }
 
   h2 {
-    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
     text-align: center;
   }
 `;
@@ -82,7 +90,44 @@ const technologies = css`
   }
 `;
 
+const passions = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  div > div {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+  }
+
+  div > div > img {
+    justify-self: center;
+    align-self: center;
+    flex-shrink: 0;
+    width: 150px;
+    height: auto;
+  }
+`;
+
 export function About() {
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch('UteGreiner_CV.pdf').then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'UteGreiner_CV.pdf';
+        alink.click();
+      });
+    });
+  };
   return (
     <div css={about}>
       <h1>About</h1>
@@ -105,7 +150,7 @@ export function About() {
             expertise and would like to further grow in that field as a web
             developer.
           </p>
-          <p>CV Download</p>
+          <button onClick={onButtonClick}>CV Download</button>
         </div>
       </div>
 
@@ -220,6 +265,14 @@ export function About() {
             backgroundColor: '#000',
           }}
         >
+          <img src={npm} alt="npm Logo" />
+          NPM
+        </div>
+        <div
+          css={{
+            backgroundColor: '#9a414b',
+          }}
+        >
           <img src={jest} alt="Jest Logo" />
           JEST
         </div>
@@ -313,16 +366,47 @@ export function About() {
         </div>
       </div>
       <h2>My Passions</h2>
-      <h3>Sports</h3>
-      <img src="sport1.jpg" alt="Aerial Silk" width="100px" height="auto" />
-      <h3>Traveling</h3>
-      <img src="traveling1.jpg" alt="Traveling" width="100px" height="auto" />
-      <h3>Cooking & Baking</h3>
-      <img src="sport1.jpg" alt="Aerial Silk" width="100px" height="auto" />
-      <h3>Plants</h3>
-      <img src="sport1.jpg" alt="Aerial Silk" width="100px" height="auto" />
-      <h3>Interior Design</h3>
-      <img src="sport1.jpg" alt="Aerial Silk" width="100px" height="auto" />
+      <div css={passions}>
+        <div>
+          <h3>Sports</h3>
+          <div>
+            <img src="sport.jpg" alt="Ute doing Aerial Silk" />
+          </div>
+        </div>
+        <div>
+          <h3>Traveling</h3>
+          <div>
+            <img
+              src="traveling.jpg"
+              alt="Ute in front of the palace in Taipei, Taiwan"
+            />
+          </div>
+        </div>
+        <div>
+          <h3>Cooking & Baking</h3>
+          <div>
+            <img
+              src="food.jpeg"
+              alt="dish with fish on spinach and crispy potatoes"
+            />
+          </div>
+        </div>
+        <div>
+          <h3>Plants</h3>
+          <div>
+            <img src="plants.jpeg" alt="an urban jungle" />
+          </div>
+        </div>
+        <div>
+          <h3>Interior Design</h3>
+          <div>
+            <img
+              src="interior.jpg"
+              alt="an apartment entrance with a black wall and vintage furniture"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
