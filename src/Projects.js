@@ -52,6 +52,7 @@ const imageRight = css`
   a:focus {
     box-shadow: inset 0 0 0 2em #320d6d;
     color: #fff;
+    transition-duration: 1s;
   }
 `;
 
@@ -90,6 +91,7 @@ const imageLeft = css`
   a:focus {
     box-shadow: inset 0 0 0 2em #320d6d;
     color: #fff;
+    transition-duration: 1s;
   }
 `;
 

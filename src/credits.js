@@ -1,4 +1,4 @@
-export function Icons() {
+export function Credits() {
   return (
     <div>
       <a
@@ -128,6 +128,9 @@ export function Icons() {
       icon by{' '}
       <a target="_blank" href="https://icons8.com">
         Icons8
+      </a>
+      <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
+        Arrow icons created by Freepik - Flaticon
       </a>
     </div>
   );

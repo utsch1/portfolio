@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import arrow from './Illustrations/arrow.png';
 import afterEffects from './Logos/aftereffects.png';
 import cloudinary from './Logos/cloudinary.png';
 import css3 from './Logos/css3.png';
@@ -30,7 +31,7 @@ import typo3 from './Logos/typo3.png';
 import vscode from './Logos/vscode.png';
 
 const about = css`
-  background-color: #ffd447;
+  background-color: #faf9f9;
   padding: 30px 100px;
 
   h1 {
@@ -39,7 +40,7 @@ const about = css`
   }
 
   h2 {
-    margin-top: 30px;
+    margin-top: 100px;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -63,10 +64,6 @@ const introduction = css`
   div {
     margin: 20px 0 20px 40px;
   }
-
-  div > :last-child {
-    text-align: right;
-  }
 `;
 
 const technologies = css`
@@ -83,6 +80,8 @@ const technologies = css`
     margin: 2px;
     align-items: center;
     justify-content: center;
+    font-family: 'Bakbak One', cursive;
+    letter-spacing: 1px;
   }
 
   div > img {
@@ -99,7 +98,6 @@ const passions = css`
 
   div > div {
     background-color: #fff;
-
     width: 150px;
     height: 150px;
     display: inline-block;
@@ -132,21 +130,26 @@ const passions = css`
   }
 `;
 
+const arrowHover = css`
+  position: absolute;
+  left: 10px;
+  top: 1300px;
+
+  div {
+    font-size: 50px;
+    position: absolute;
+    left: 125px;
+    top: -20px;
+    font-family: 'Caveat', cursive;
+  }
+
+  img {
+    width: 30%;
+    transform: rotate(60deg);
+  }
+`;
+
 export function About() {
-  const onButtonClick = () => {
-    // using Java Script method to get PDF file
-    fetch('UteGreiner_CV.pdf').then((response) => {
-      response.blob().then((blob) => {
-        // Creating new object of PDF file
-        const fileURL = window.URL.createObjectURL(blob);
-        // Setting various property values
-        let alink = document.createElement('a');
-        alink.href = fileURL;
-        alink.download = 'UteGreiner_CV.pdf';
-        alink.click();
-      });
-    });
-  };
   return (
     <div css={about}>
       <h1>About</h1>
@@ -169,7 +172,6 @@ export function About() {
             expertise and would like to further grow in that field as a web
             developer.
           </p>
-          <button onClick={onButtonClick}>CV Download</button>
         </div>
       </div>
 
@@ -401,6 +403,10 @@ export function About() {
         </div>
       </div>
       <h2>My Passions</h2>
+      <div css={arrowHover}>
+        <div>hover me</div>
+        <img src={arrow} alt="illustrated arrow" />
+      </div>
       <div css={passions}>
         <div>
           <h3>Sports</h3>
