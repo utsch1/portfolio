@@ -1,4 +1,4 @@
-export function Credits() {
+export default function credits() {
   return (
     <div>
       <a

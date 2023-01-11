@@ -31,18 +31,21 @@ import typo3 from './Logos/typo3.png';
 import vscode from './Logos/vscode.png';
 
 const about = css`
-  background-color: #faf9f9;
+  background-color: #efe6dd;
   padding: 30px 100px;
+  color: #231f20;
 
   h1 {
     margin: 0;
     text-align: center;
+    text-transform: uppercase;
   }
 
   h2 {
     margin-top: 100px;
     margin-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
   }
 
   h3 {
@@ -133,7 +136,7 @@ const passions = css`
 const arrowHover = css`
   position: absolute;
   left: 10px;
-  top: 1300px;
+  top: 1350px;
 
   div {
     font-size: 50px;

@@ -2,12 +2,13 @@
 import { css } from '@emotion/react';
 
 const projects = css`
-  background-color: #ffbfb7;
+  background-color: #ffd447;
   padding: 30px 100px;
 
   h1 {
     margin: 0;
     text-align: center;
+    text-transform: uppercase;
   }
 
   h2 {
@@ -51,7 +52,7 @@ const imageRight = css`
   a:hover,
   a:focus {
     box-shadow: inset 0 0 0 2em #320d6d;
-    color: #fff;
+    color: #ffd447;
     transition-duration: 1s;
   }
 `;
@@ -90,7 +91,7 @@ const imageLeft = css`
   a:hover,
   a:focus {
     box-shadow: inset 0 0 0 2em #320d6d;
-    color: #fff;
+    color: #ffd447;
     transition-duration: 1s;
   }
 `;

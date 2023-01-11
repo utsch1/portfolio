@@ -12,6 +12,7 @@ const contact = css`
 
   h1 {
     margin: 0 0 30px 0;
+    text-transform: uppercase;
   }
 
   a > img {
@@ -56,7 +57,7 @@ export function Contact() {
         <img src={email} alt="Email Icon" />
       </a>
       <div css={credits}>
-        <a href="/credits">Credits</a>
+        <a href="/#/credits">Credits</a>
       </div>
     </div>
   );
