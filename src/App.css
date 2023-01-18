@@ -1,4 +1,7 @@
 .App {
+  background-color: #231f20;
+  color: #efe6dd;
+  padding: 20px;
   text-align: justify;
   line-height: 1.5;
   font-family: 'Nunito Sans', sans-serif;

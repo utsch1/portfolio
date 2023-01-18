@@ -31,9 +31,7 @@ import typo3 from './Logos/typo3.png';
 import vscode from './Logos/vscode.png';
 
 const about = css`
-  background-color: #efe6dd;
   padding: 30px 100px;
-  color: #231f20;
 
   h1 {
     margin: 0;

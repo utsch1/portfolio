@@ -2,9 +2,6 @@
 import { css } from '@emotion/react';
 
 const projects = css`
-  background-color: #ffd447;
-  padding: 30px 100px;
-
   h1 {
     margin: 0;
     text-align: center;
