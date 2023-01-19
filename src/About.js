@@ -6,23 +6,30 @@ const about = css`
 `;
 
 const introduction = css`
+  margin: auto;
+  width: 200px;
+  height: auto;
+`;
+
+const techStack = css`
   display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  font-size: 14px;
 
-  img {
-    border-radius: 50%;
-    border: 2px solid black;
-    margin: 20px 0;
-  }
-
-  div {
-    margin: 20px 0 20px 40px;
+  p {
+    width: 230px;
+    text-align: right;
   }
 `;
 
 const technologies = css`
+  width: 70%;
+  float: right;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: flex-end;
   flex-wrap: wrap;
   font-size: 14px;
 
@@ -36,12 +43,6 @@ const technologies = css`
     justify-content: center;
     font-family: 'Bakbak One', cursive;
     letter-spacing: 1px;
-  }
-
-  div > img {
-    width: auto;
-    height: 20px;
-    margin-right: 7px;
   }
 `;
 
@@ -89,17 +90,17 @@ export function About() {
     <div css={about}>
       <div css={introduction}>
         <img
-          src="UteGreiner.png"
+          src="UteGreiner.jpg"
           alt="Ute Greiner"
           width="200px"
           height="auto"
         />
-        <div>
-          <p>
-            I am a very passionate person and can get excited about minor
-            things. My main passions are:
-          </p>
-        </div>
+      </div>
+      <div css={techStack}>
+        <p>
+          I am a very passionate person and can get excited about minor things.
+          My main passions are (hover):
+        </p>
       </div>
       <div css={passions}>
         <div>
@@ -156,10 +157,12 @@ export function About() {
         </div>
       </div>
 
-      <p>
-        In the bootcamp, I used multiple different tools and technologies which
-        I can complement with my graphic design knowledge:
-      </p>
+      <div css={techStack}>
+        <p>
+          In the bootcamp, I used multiple different tools and technologies
+          which I can complement with my graphic design knowledge:
+        </p>
+      </div>
       <div css={technologies}>
         <div>HTML5</div>
         <div>CSS3</div>

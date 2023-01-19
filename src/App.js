@@ -20,12 +20,14 @@ const navbar = css`
 
   h1 {
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
     margin: 0px;
   }
 
   h2 {
-    margin: 10px 0 0 0;
+    margin: 0;
+    font-size: 22px;
+    font-weight: lighter;
   }
 
   nav {
@@ -33,6 +35,7 @@ const navbar = css`
     display: flex;
     flex-direction: column;
     width: 120px;
+    font-weight: lighter;
   }
 
   nav > a {
@@ -57,6 +60,7 @@ const navbar = css`
     cursor: pointer;
     text-align: left;
     border-bottom: 2px solid #231f20;
+    font-weight: lighter;
   }
 
   nav > button:hover,
@@ -74,7 +78,7 @@ const introduction = css`
   justify-content: flex-end;
   align-items: flex-end;
 
-  div {
+  p {
     width: 230px;
     text-align: right;
     margin: 40px;
@@ -102,8 +106,8 @@ function App() {
         <header css={navbar}>
           <h1>Ute Greiner</h1>
           <h2>
-            web developer <br />
-            with marketing background
+            web developer with <br />
+            marketing background
           </h2>
           <nav>
             <a>more about me</a>
@@ -119,12 +123,12 @@ function App() {
 
         {/* Introduction */}
         <div css={introduction}>
-          <div>
+          <p>
             I am a 29 year old web developer, working and living in Vienna. My
             background is in Marketing. I recently graduated from a Fullstack
             Web Development Bootcamp where I learned the most important
             technologies in projects simulating future jobs.{' '}
-          </div>
+          </p>
         </div>
 
         <About id="about" />
