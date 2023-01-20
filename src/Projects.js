@@ -5,8 +5,6 @@ import { css } from '@emotion/react';
 // import websiteLight from './Logos/websiteLight.png';
 
 const projects = css`
-  background-color: #231f20;
-  color: #efe6dd;
   width: calc(100vw - 60px);
   display: flex;
   flex-direction: column;
@@ -16,7 +14,7 @@ const projects = css`
   h2 {
     width: 230px;
     text-align: right;
-    margin: 0;
+    margin: 0 30px 0 0;
     font-weight: normal;
   }
 `;

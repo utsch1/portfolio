@@ -60,6 +60,7 @@ const navbar = css`
     cursor: pointer;
     text-align: left;
     border-bottom: 2px solid transparent;
+    font-family: 'Inter', sans-serif;
     font-weight: lighter;
   }
 
