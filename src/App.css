@@ -6,3 +6,13 @@
   line-height: 1.5;
   font-family: 'Inter', sans-serif;
 }
+
+.dark {
+  background-color: #231f20;
+  color: #efe6dd;
+}
+
+.light {
+  background-color: #efe6dd;
+  color: #231f20;
+}

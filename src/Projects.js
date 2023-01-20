@@ -17,6 +17,7 @@ const projects = css`
     width: 230px;
     text-align: right;
     margin: 0;
+    font-weight: normal;
   }
 `;
 
@@ -69,7 +70,7 @@ export function Projects() {
         </div> */}
       </div>
       <div>
-        <h2>Meme Generator</h2>
+        <h2>meme generator</h2>
         {/* <div>
           <div>
             <p>

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import './App.css';
 import { css } from '@emotion/react';
+import { useEffect, useState } from 'react';
 import { About } from './About';
 import { Projects } from './Projects';
 
@@ -10,7 +11,7 @@ const contents = css`
 `;
 
 const navbar = css`
-  color: #efe6dd;
+  /* color: #efe6dd; */
   height: 50px;
   display: flex;
   flex-direction: column;
@@ -40,7 +41,7 @@ const navbar = css`
 
   nav > a {
     text-decoration: none;
-    color: #efe6dd;
+    /* color: #efe6dd; */
     margin-bottom: 10px;
     border-bottom: 2px solid #231f20;
   }
@@ -55,8 +56,8 @@ const navbar = css`
     font-size: 16px;
     border: 0px;
     padding: 0px;
-    background-color: #231f20;
-    color: #efe6dd;
+    /* background-color: #231f20;
+    color: #efe6dd; */
     cursor: pointer;
     text-align: left;
     border-bottom: 2px solid #231f20;
@@ -70,8 +71,8 @@ const navbar = css`
 `;
 
 const introduction = css`
-  background-color: #231f20;
-  color: #efe6dd;
+  /* background-color: #231f20;
+  color: #efe6dd; */
   height: 100vh;
   width: calc(100vw - 60px);
   display: flex;
@@ -86,6 +87,20 @@ const introduction = css`
 `;
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.className = theme;
+  }, [theme]);
+
   const onButtonClick = () => {
     // using Java Script method to get PDF file
     fetch('UteGreiner_CV.pdf').then((response) => {
@@ -101,7 +116,8 @@ function App() {
     });
   };
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <button onClick={toggleTheme}>Toggle Theme</button>
       <div css={contents}>
         <header css={navbar}>
           <h1>Ute Greiner</h1>
