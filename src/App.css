@@ -1,7 +1,7 @@
 .App {
   background-color: #231f20;
   color: #efe6dd;
-  padding: 20px;
+  padding: 30px;
   text-align: justify;
   line-height: 1.5;
   font-family: 'Inter', sans-serif;
@@ -10,6 +10,34 @@
 .dark {
   background-color: #231f20;
   color: #efe6dd;
+}
+
+div.dark > div {
+  border: 1px solid #efe6dd;
+}
+
+div.light > div {
+  border: 1px solid #231f20;
+}
+
+.dark a {
+  color: #efe6dd;
+}
+
+.light a {
+  color: #231f20;
+}
+
+.dark button {
+  background-color: transparent;
+  border: none;
+  color: #efe6dd;
+}
+
+.light button {
+  background-color: transparent;
+  border: none;
+  color: #231f20;
 }
 
 .light {

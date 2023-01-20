@@ -132,6 +132,22 @@ export default function credits() {
       <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
         Arrow icons created by Freepik - Flaticon
       </a>
+      {/* Sun */}
+      <a target="_blank" href="https://icons8.com/icon/9313/sun">
+        Sun
+      </a>{' '}
+      icon by{' '}
+      <a target="_blank" href="https://icons8.com">
+        Icons8
+      </a>
+      {/* Moon */}
+      <a target="_blank" href="https://icons8.com/icon/54382/crescent-moon">
+        Crescent Moon
+      </a>{' '}
+      icon by{' '}
+      <a target="_blank" href="https://icons8.com">
+        Icons8
+      </a>
     </div>
   );
 }

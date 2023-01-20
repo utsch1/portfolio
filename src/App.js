@@ -3,6 +3,8 @@ import './App.css';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { About } from './About';
+import darkMode from './Illustrations/darkMode.png';
+import lightMode from './Illustrations/lightMode.png';
 import { Projects } from './Projects';
 
 const contents = css`
@@ -11,7 +13,6 @@ const contents = css`
 `;
 
 const navbar = css`
-  /* color: #efe6dd; */
   height: 50px;
   display: flex;
   flex-direction: column;
@@ -41,9 +42,8 @@ const navbar = css`
 
   nav > a {
     text-decoration: none;
-    /* color: #efe6dd; */
     margin-bottom: 10px;
-    border-bottom: 2px solid #231f20;
+    border-bottom: 2px solid transparent;
   }
 
   nav > a:hover,
@@ -56,11 +56,10 @@ const navbar = css`
     font-size: 16px;
     border: 0px;
     padding: 0px;
-    /* background-color: #231f20;
-    color: #efe6dd; */
+    background-color: transparent;
     cursor: pointer;
     text-align: left;
-    border-bottom: 2px solid #231f20;
+    border-bottom: 2px solid transparent;
     font-weight: lighter;
   }
 
@@ -71,8 +70,6 @@ const navbar = css`
 `;
 
 const introduction = css`
-  /* background-color: #231f20;
-  color: #efe6dd; */
   height: 100vh;
   width: calc(100vw - 60px);
   display: flex;
@@ -117,7 +114,22 @@ function App() {
   };
   return (
     <div className={`App ${theme}`}>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+      {theme === 'dark' ? (
+        <button
+          onClick={toggleTheme}
+          css={{ position: 'absolute', right: '20px', top: '5px' }}
+        >
+          <img src={lightMode} alt="sun icon" width="20px" />
+        </button>
+      ) : (
+        <button
+          onClick={toggleTheme}
+          css={{ position: 'absolute', right: '20px', top: '5px' }}
+        >
+          <img src={darkMode} alt="moon icon" width="20px" />
+        </button>
+      )}
+      {/* <button onClick={toggleTheme}>(theme='dark' ? dark : light)</button> */}
       <div css={contents}>
         <header css={navbar}>
           <h1>Ute Greiner</h1>
