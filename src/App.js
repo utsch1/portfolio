@@ -86,7 +86,7 @@ const introduction = css`
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
-  const [showTechStack, setShowTechStack] = useState(false);
+  // const [showTechStack, setShowTechStack] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
 
@@ -105,14 +105,20 @@ function App() {
 
   function about() {
     setShowAbout((wasOpened) => !wasOpened);
+    if (showProjects === true) {
+      setShowProjects(false);
+    }
   }
 
-  function techStack() {
-    setShowTechStack((wasOpened) => !wasOpened);
-  }
+  // function techStack() {
+  //   setShowTechStack((wasOpened) => !wasOpened);
+  // }
 
   function projects() {
     setShowProjects((wasOpened) => !wasOpened);
+    if (showAbout === true) {
+      setShowAbout(false);
+    }
   }
 
   const cvDownload = () => {
@@ -122,7 +128,7 @@ function App() {
         // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
         // Setting various property values
-        let alink = document.createElement('a');
+        const alink = document.createElement('a');
         alink.href = fileURL;
         alink.download = 'UteGreiner_CV.pdf';
         alink.click();
@@ -155,7 +161,7 @@ function App() {
           </h2>
           <nav>
             <button onClick={about}>more about me</button>
-            <button onClick={techStack}>tech stack</button>
+            <button>tech stack</button>
             <button onClick={projects}>projects</button>
             <button onClick={cvDownload}>download cv</button>
             <a href="https://github.com/utsch1">github &#8599;</a>
@@ -175,9 +181,9 @@ function App() {
           </p>
         </div>
 
-        {showAbout && <About />}
+        {showAbout && <About id="about" />}
 
-        {showProjects && <Projects />}
+        {showProjects && <Projects id="projects" />}
       </div>
     </div>
   );
