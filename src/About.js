@@ -32,6 +32,7 @@ const technologies = css`
   justify-content: flex-end;
   flex-wrap: wrap;
   font-size: 14px;
+  font-family: 'Bakbak One', cursive;
 
   div {
     background-color: #efe6dd;
@@ -41,7 +42,6 @@ const technologies = css`
     margin: 2px;
     align-items: center;
     justify-content: center;
-    font-family: 'Bakbak One', cursive;
     letter-spacing: 1px;
   }
 `;

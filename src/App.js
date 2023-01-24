@@ -86,6 +86,10 @@ const introduction = css`
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [showTechStack, setShowTechStack] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
+
   const toggleTheme = () => {
     if (theme === 'dark') {
       setTheme('light');
@@ -99,7 +103,19 @@ function App() {
     document.body.className = theme;
   }, [theme]);
 
-  const onButtonClick = () => {
+  function about() {
+    setShowAbout((wasOpened) => !wasOpened);
+  }
+
+  function techStack() {
+    setShowTechStack((wasOpened) => !wasOpened);
+  }
+
+  function projects() {
+    setShowProjects((wasOpened) => !wasOpened);
+  }
+
+  const cvDownload = () => {
     // using Java Script method to get PDF file
     fetch('UteGreiner_CV.pdf').then((response) => {
       response.blob().then((blob) => {
@@ -130,7 +146,6 @@ function App() {
           <img src={darkMode} alt="moon icon" width="20px" />
         </button>
       )}
-      {/* <button onClick={toggleTheme}>(theme='dark' ? dark : light)</button> */}
       <div css={contents}>
         <header css={navbar}>
           <h1>Ute Greiner</h1>
@@ -139,10 +154,10 @@ function App() {
             marketing background
           </h2>
           <nav>
-            <a>more about me</a>
-            <a>tech stack</a>
-            <a>projects</a>
-            <button onClick={onButtonClick}>download cv</button>
+            <button onClick={about}>more about me</button>
+            <button onClick={techStack}>tech stack</button>
+            <button onClick={projects}>projects</button>
+            <button onClick={cvDownload}>download cv</button>
             <a href="https://github.com/utsch1">github &#8599;</a>
             <a href="https://www.linkedin.com/in/ute-greiner/">
               linkedin &#8599;
@@ -151,7 +166,7 @@ function App() {
         </header>
 
         {/* Introduction */}
-        <div css={introduction}>
+        <div id="intro" css={introduction}>
           <p>
             I am a 29 year old web developer, working and living in Vienna. My
             background is in Marketing. I recently graduated from a Fullstack
@@ -160,9 +175,9 @@ function App() {
           </p>
         </div>
 
-        <About id="about" />
+        {showAbout && <About />}
 
-        <Projects />
+        {showProjects && <Projects />}
       </div>
     </div>
   );
