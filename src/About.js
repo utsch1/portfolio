@@ -1,48 +1,31 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-const about = css`
-  padding: 30px;
-`;
+// const about = css`
+//   padding: 30px;
+// `;
 
-const introduction = css`
-  margin: auto;
+const photo = css`
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
   width: 200px;
-  height: auto;
+  height: 200px;
+  border: 1px solid #231f20;
+  padding: 0;
 `;
 
-const techStack = css`
+const aboutMe = css`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 16px;
 
   p {
     width: 230px;
     text-align: right;
-  }
-`;
-
-const technologies = css`
-  width: 70%;
-  float: right;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  font-size: 14px;
-  font-family: 'Bakbak One', cursive;
-
-  div {
-    background-color: #efe6dd;
-    color: #231f20;
-    padding: 7px;
-    display: flex;
-    margin: 2px;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 1px;
+    margin-bottom: 5px;
   }
 `;
 
@@ -50,12 +33,13 @@ const passions = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  margin-right: 40px;
+  margin-bottom: 30px;
 
   div > div {
     background-color: #efe6dd;
-    margin-left: 20px;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
     border-radius: 50%;
     overflow: hidden;
@@ -65,7 +49,7 @@ const passions = css`
     position: absolute;
     padding-left: 27px;
     padding-top: 24px;
-    width: 100px;
+    width: 50px;
     height: auto;
   }
 
@@ -74,7 +58,7 @@ const passions = css`
     justify-self: center;
     align-self: center;
     flex-shrink: 0;
-    width: 150px;
+    width: 100px;
     height: auto;
     opacity: 0;
     transition: opacity 0.1s;
@@ -87,8 +71,8 @@ const passions = css`
 
 export function About() {
   return (
-    <div css={about}>
-      <div css={introduction}>
+    <div>
+      <div css={photo}>
         <img
           src="UteGreiner.jpg"
           alt="Ute Greiner"
@@ -96,7 +80,7 @@ export function About() {
           height="auto"
         />
       </div>
-      <div css={techStack}>
+      <div css={aboutMe}>
         <p>
           I am a very passionate person and can get excited about minor things.
           My main passions are (hover):
@@ -155,43 +139,6 @@ export function About() {
             />
           </div>
         </div>
-      </div>
-
-      <div css={techStack}>
-        <p>
-          In the bootcamp, I used multiple different tools and technologies
-          which I can complement with my graphic design knowledge:
-        </p>
-      </div>
-      <div css={technologies}>
-        <div>HTML5</div>
-        <div>CSS3</div>
-        <div>JAVASCRIPT</div>
-        <div>TYPESCRIPT</div>
-        <div>POSTGRESQL</div>
-        <div>DATABASE MIGRATIONS</div>
-        <div>REST API</div>
-        <div>NODE.JS</div>
-        <div>REACT</div>
-        <div>NEXT.JS</div>
-        <div>EMOTION</div>
-        <div>MATERIAL UI</div>
-        <div>CLOUDINARY</div>
-        <div>GIT</div>
-        <div>GITHUB</div>
-        <div>NPM</div>
-        <div>JEST</div>
-        <div>PLAYWRIGHT</div>
-        <div>FLY.IO</div>
-        <div>NETLIFY</div>
-        <div>VS CODE</div>
-        <div>TYPO3</div>
-        <div>DRAWSQL</div>
-        <div>FIGMA</div>
-        <div>PHOTOSHOP</div>
-        <div>INDESIGN</div>
-        <div>ILLUSTRATOR</div>
-        <div>AFTER EFFECTS</div>
       </div>
     </div>
   );

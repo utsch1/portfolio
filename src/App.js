@@ -6,6 +6,7 @@ import { About } from './About';
 import darkMode from './Illustrations/darkMode.png';
 import lightMode from './Illustrations/lightMode.png';
 import { Projects } from './Projects';
+import { TechStack } from './TechStack';
 
 const contents = css`
   border: 1px solid #efe6dd;
@@ -28,7 +29,7 @@ const navbar = css`
 
   h2 {
     margin: 0;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: lighter;
   }
 
@@ -71,7 +72,7 @@ const navbar = css`
 `;
 
 const introduction = css`
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: calc(100vw - 60px);
   display: flex;
   justify-content: flex-end;
@@ -86,8 +87,9 @@ const introduction = css`
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
-  // const [showTechStack, setShowTechStack] = useState(false);
+  const [showHome, setShowHome] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
+  const [showTechStack, setShowTechStack] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
 
   const toggleTheme = () => {
@@ -103,21 +105,47 @@ function App() {
     document.body.className = theme;
   }, [theme]);
 
+  function home() {
+    setShowHome((wasOpened) => !wasOpened);
+    if (showAbout === true) {
+      setShowAbout(false);
+    } else if (showProjects === true) {
+      setShowProjects(false);
+    } else if (showTechStack === true) {
+      setShowTechStack(false);
+    }
+  }
+
   function about() {
     setShowAbout((wasOpened) => !wasOpened);
-    if (showProjects === true) {
+    if (showHome === true) {
+      setShowHome(false);
+    } else if (showProjects === true) {
+      setShowProjects(false);
+    } else if (showTechStack === true) {
+      setShowTechStack(false);
+    }
+  }
+
+  function techStack() {
+    setShowTechStack((wasOpened) => !wasOpened);
+    if (showHome === true) {
+      setShowHome(false);
+    } else if (showAbout === true) {
+      setShowAbout(false);
+    } else if (showProjects === true) {
       setShowProjects(false);
     }
   }
 
-  // function techStack() {
-  //   setShowTechStack((wasOpened) => !wasOpened);
-  // }
-
   function projects() {
     setShowProjects((wasOpened) => !wasOpened);
-    if (showAbout === true) {
+    if (showHome === true) {
+      setShowHome(false);
+    } else if (showAbout === true) {
       setShowAbout(false);
+    } else if (showTechStack === true) {
+      setShowTechStack(false);
     }
   }
 
@@ -160,8 +188,9 @@ function App() {
             marketing background
           </h2>
           <nav>
-            <button onClick={about}>more about me</button>
-            <button>tech stack</button>
+            <button onClick={home}>home</button>
+            <button onClick={about}>about me</button>
+            <button onClick={techStack}>tech stack</button>
             <button onClick={projects}>projects</button>
             <button onClick={cvDownload}>download cv</button>
             <a href="https://github.com/utsch1">github &#8599;</a>
@@ -171,19 +200,21 @@ function App() {
           </nav>
         </header>
 
-        {/* Introduction */}
-        <div id="intro" css={introduction}>
-          <p>
-            I am a 29 year old web developer, working and living in Vienna. My
-            background is in Marketing. I recently graduated from a Fullstack
-            Web Development Bootcamp where I learned the most important
-            technologies in projects simulating future jobs.{' '}
-          </p>
+        <div id="home" css={introduction}>
+          {showHome && (
+            <p>
+              I am a 29 year old web developer, working and living in Vienna. My
+              background is in Marketing. I recently graduated from a Fullstack
+              Web Development Bootcamp where I learned the most important
+              technologies in projects simulating future jobs.{' '}
+            </p>
+          )}
+          {showAbout && <About id="about" />}
+
+          {showTechStack && <TechStack id="techStack" />}
+
+          {showProjects && <Projects id="projects" />}
         </div>
-
-        {showAbout && <About id="about" />}
-
-        {showProjects && <Projects id="projects" />}
       </div>
     </div>
   );
