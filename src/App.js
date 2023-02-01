@@ -2,11 +2,12 @@
 import './App.css';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
-import { About } from './About';
+import { About } from './Components/About';
+import { Home } from './Components/Home';
+import { Projects } from './Components/Projects';
+import { TechStack } from './Components/TechStack';
 import darkMode from './Illustrations/darkMode.png';
 import lightMode from './Illustrations/lightMode.png';
-import { Projects } from './Projects';
-import { TechStack } from './TechStack';
 
 const contents = css`
   border: 1px solid #efe6dd;
@@ -200,15 +201,8 @@ function App() {
           </nav>
         </header>
 
-        <div id="home" css={introduction}>
-          {showHome && (
-            <p>
-              I am a 29 year old web developer, working and living in Vienna. My
-              background is in Marketing. I recently graduated from a Fullstack
-              Web Development Bootcamp where I learned the most important
-              technologies in projects simulating future jobs.{' '}
-            </p>
-          )}
+        <div css={introduction}>
+          {showHome && <Home id="home" />}
           {showAbout && <About id="about" />}
 
           {showTechStack && <TechStack id="techStack" />}

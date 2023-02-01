@@ -24,8 +24,7 @@ const technologies = css`
   flex-wrap: wrap;
   font-size: 14px;
   font-family: 'Bakbak One', sans-serif;
-  margin-right: 40px;
-  margin-bottom: 40px;
+  margin: 10px 40px 40px 0;
 
   div {
     background-color: #efe6dd;
@@ -45,7 +44,7 @@ export function TechStack() {
       <div css={techStack}>
         <p>
           In the bootcamp, I used multiple different tools and technologies
-          which I can complement with my graphic design knowledge:
+          which I can complement with my knowledge in graphic design.
         </p>
       </div>
       <div css={technologies}>

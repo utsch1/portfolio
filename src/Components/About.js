@@ -43,6 +43,7 @@ const passions = css`
     display: inline-block;
     border-radius: 50%;
     overflow: hidden;
+    margin: 10px 0 0 10px;
   }
 
   div > div > img:first-child {
@@ -82,8 +83,8 @@ export function About() {
       </div>
       <div css={aboutMe}>
         <p>
-          I am a very passionate person and can get excited about minor things.
-          My main passions are (hover):
+          I am an open-minded and passionate person who can get excited about
+          minor things. My main passions are <i>(hover)</i>
         </p>
       </div>
       <div css={passions}>
