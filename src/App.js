@@ -6,12 +6,19 @@ import { About } from './Components/About';
 import { Home } from './Components/Home';
 import { Projects } from './Components/Projects';
 import { TechStack } from './Components/TechStack';
-import darkMode from './Illustrations/darkMode.png';
-import lightMode from './Illustrations/lightMode.png';
+
+// import darkMode from './Illustrations/darkMode.png';
+// import lightMode from './Illustrations/lightMode.png';
 
 const contents = css`
   border: 1px solid #efe6dd;
   width: calc(100vw - 60px);
+  height: calc(100vh - 60px);
+  @media (max-width: 500px) {
+    max-height: calc(100vh - 60px);
+    display: block;
+    overflow: scroll;
+  }
 `;
 
 const navbar = css`
@@ -21,6 +28,11 @@ const navbar = css`
   z-index: 1;
   position: fixed;
   margin: 40px;
+  @media (max-width: 500px) {
+    margin: 10px 10px 40px 10px;
+    height: auto;
+    position: static;
+  }
 
   h1 {
     text-transform: uppercase;
@@ -40,17 +52,26 @@ const navbar = css`
     flex-direction: column;
     width: 120px;
     font-weight: lighter;
+    @media (max-width: 500px) {
+      margin-top: 40px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: calc(100vw - 60px);
+    }
   }
 
   nav > a {
     text-decoration: none;
     margin-bottom: 10px;
     border-bottom: 2px solid transparent;
+    @media (max-width: 500px) {
+      margin-right: 20px;
+    }
   }
 
-  nav > a:hover,
-  a:focus {
-    border-bottom: 2px solid #7ebdc2;
+  nav > a:hover {
+    border-left: 2px solid #7ebdc2;
+    padding-left: 5px;
   }
 
   nav > button {
@@ -64,11 +85,14 @@ const navbar = css`
     border-bottom: 2px solid transparent;
     font-family: 'Inter', sans-serif;
     font-weight: lighter;
+    @media (max-width: 500px) {
+      margin-right: 20px;
+    }
   }
 
-  nav > button:hover,
-  button:focus {
-    border-bottom: 2px solid #7ebdc2;
+  nav > button:focus {
+    border-left: 2px solid #7ebdc2;
+    padding-left: 5px;
   }
 `;
 
@@ -78,11 +102,19 @@ const introduction = css`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  z-index: 0;
+  @media (max-width: 500px) {
+    height: calc(100% - 300px);
+    overflow: hidden;
+  }
 
   p {
     width: 230px;
     text-align: right;
     margin: 40px;
+    @media (max-width: 500px) {
+      margin: 10px 10px 0 0;
+    }
   }
 `;
 
@@ -169,20 +201,30 @@ function App() {
       {theme === 'dark' ? (
         <button
           onClick={toggleTheme}
-          css={{ position: 'absolute', right: '20px', top: '5px' }}
+          css={{
+            position: 'absolute',
+            right: '21px',
+            top: '5px',
+          }}
         >
-          <img src={lightMode} alt="sun icon" width="20px" />
+          {/* <img src={lightMode} alt="sun icon" width="20px" /> */}
+          LIGHT
         </button>
       ) : (
         <button
           onClick={toggleTheme}
-          css={{ position: 'absolute', right: '20px', top: '5px' }}
+          css={{
+            position: 'absolute',
+            right: '21px',
+            top: '5px',
+          }}
         >
-          <img src={darkMode} alt="moon icon" width="20px" />
+          {/* <img src={darkMode} alt="moon icon" width="20px" /> */}
+          DARK
         </button>
       )}
       <div css={contents}>
-        <header css={navbar}>
+        <div css={navbar}>
           <h1>Ute Greiner</h1>
           <h2>
             web developer with <br />
@@ -199,7 +241,7 @@ function App() {
               linkedin &#8599;
             </a>
           </nav>
-        </header>
+        </div>
 
         <div css={introduction}>
           {showHome && <Home id="home" />}

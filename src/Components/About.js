@@ -1,19 +1,25 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
-// const about = css`
-//   padding: 30px;
-// `;
-
-const photo = css`
-  position: absolute;
-  top: 0;
-  left: calc(50% - 100px);
-  width: 200px;
-  height: 200px;
-  border: 1px solid #231f20;
-  padding: 0;
+const fadeInOpacity = keyframes`
+   from {opacity: 0;}
+ to {opacity: 1;}
 `;
+
+const fadeIn = css`
+  animation: ${fadeInOpacity} 2s linear;
+`;
+
+// const photo = css`
+//   position: absolute;
+//   top: 0;
+//   left: calc(50% - 100px);
+//   width: 200px;
+//   height: 200px;
+//   border: 1px solid #231f20;
+//   border-top: none;
+//   padding: 0;
+// `;
 
 const aboutMe = css`
   display: flex;
@@ -35,6 +41,9 @@ const passions = css`
   justify-content: flex-end;
   margin-right: 40px;
   margin-bottom: 30px;
+  @media (max-width: 500px) {
+    margin: 0 10px 0 0;
+  }
 
   div > div {
     background-color: #efe6dd;
@@ -44,6 +53,10 @@ const passions = css`
     border-radius: 50%;
     overflow: hidden;
     margin: 10px 0 0 10px;
+    @media (max-width: 500px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   div > div > img:first-child {
@@ -52,6 +65,11 @@ const passions = css`
     padding-top: 24px;
     width: 50px;
     height: auto;
+    @media (max-width: 500px) {
+      width: 45px;
+      padding-left: 13px;
+      padding-top: 12px;
+    }
   }
 
   div > div > img:last-child {
@@ -63,6 +81,9 @@ const passions = css`
     height: auto;
     opacity: 0;
     transition: opacity 0.1s;
+    @media (max-width: 500px) {
+      width: 70px;
+    }
   }
   div > div > img:last-child:hover {
     opacity: 1;
@@ -72,15 +93,16 @@ const passions = css`
 
 export function About() {
   return (
-    <div>
-      <div css={photo}>
+    <div css={fadeIn}>
+      {/* <div css={photo}>
         <img
           src="UteGreiner.jpg"
           alt="Ute Greiner"
           width="200px"
           height="auto"
         />
-      </div>
+      </div> */}
+
       <div css={aboutMe}>
         <p>
           I am an open-minded and passionate person who can get excited about

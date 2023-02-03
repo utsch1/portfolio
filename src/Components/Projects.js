@@ -1,6 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import { useState } from 'react';
+
+const fadeInOpacity = keyframes`
+   from {opacity: 0;}
+ to {opacity: 1;}
+`;
+
+const fadeIn = css`
+  animation: ${fadeInOpacity} 2s linear;
+`;
 
 const projects = css`
   width: calc(100vw - 60px);
@@ -11,9 +20,15 @@ const projects = css`
   margin-right: 40px;
   margin-bottom: 40px;
   font-size: 16px;
+  @media (max-width: 500px) {
+    margin: 0 10px 0 0;
+    display: inline-block;
+    height: 100%;
+    overflow: scroll;
+  }
 
   button {
-    width: 230px;
+    width: 100%;
     text-align: right;
     margin: 0 0 5px 0;
     padding: 0;
@@ -28,6 +43,11 @@ const projects = css`
   div > p {
     margin: 0 0 10px 0;
     width: 400px;
+    @media (max-width: 500px) {
+      width: 90%;
+      margin-left: 30px;
+      text-align: right;
+    }
   }
 
   div > span {
@@ -39,11 +59,14 @@ const projects = css`
   div > span > a {
     text-decoration: none;
     margin-left: 10px;
+    border-left: 2px solid transparent;
+    padding-left: 5px;
   }
 
   div > span > a:hover {
     text-decoration: none;
-    border-bottom: 2px solid #7ebdc2;
+    border-left: 2px solid #7ebdc2;
+    padding-left: 5px;
   }
 `;
 
@@ -80,7 +103,12 @@ export function Projects() {
   }
 
   return (
-    <div css={projects}>
+    <div
+      css={css`
+        ${projects};
+        ${fadeIn}
+      `}
+    >
       <button onClick={feastful}>feastful</button>
       {showFeastful && (
         <div>

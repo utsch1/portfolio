@@ -1,5 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
+
+const fadeInOpacity = keyframes`
+   from {opacity: 0;}
+ to {opacity: 1;}
+`;
+
+const fadeIn = css`
+  animation: ${fadeInOpacity} 2s linear;
+  @media (max-width: 500px) {
+    height: 100%;
+    overflow: scroll;
+  }
+`;
 
 const techStack = css`
   display: flex;
@@ -25,6 +38,10 @@ const technologies = css`
   font-size: 14px;
   font-family: 'Bakbak One', sans-serif;
   margin: 10px 40px 40px 0;
+  @media (max-width: 500px) {
+    width: 90%;
+    margin: 10px 10px 10px 0;
+  }
 
   div {
     background-color: #efe6dd;
@@ -40,14 +57,14 @@ const technologies = css`
 
 export function TechStack() {
   return (
-    <div>
+    <div css={fadeIn}>
       <div css={techStack}>
         <p>
           In the bootcamp, I used multiple different tools and technologies
           which I can complement with my knowledge in graphic design.
         </p>
       </div>
-      <div css={technologies}>
+      <div css={technologies} id="technologies">
         <div>HTML5</div>
         <div>CSS3</div>
         <div>JAVASCRIPT</div>
